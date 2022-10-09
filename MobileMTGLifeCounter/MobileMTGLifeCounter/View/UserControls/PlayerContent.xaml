@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"            
+             x:Class="MobileMTGLifeCounter.View.UserControls.PlayerContent" 
+             x:Name="PlayerContentName">
+  <ContentView.Content>
+        <Frame x:Name="outerFrame"  BindingContext="{x:Reference PlayerContentName}" HasShadow="False" Padding="0" Margin="3"
+         HorizontalOptions="FillAndExpand" CornerRadius="10" 
+         OutlineColor="{Binding Stats.Border}" BackgroundColor="{Binding Source={RelativeSource Self}, Path=OutlineColor}" >
+            <Frame BackgroundColor="{Binding Stats.Background}" CornerRadius="10" Padding="0" Margin="5" HasShadow="False" OutlineColor="{Binding Source={x:Reference outerFrame}, Path=OutlineColor}" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".6*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label  Grid.Row="0" Grid.ColumnSpan="3" TextColor="{Binding Stats.FontColor}"  FontAttributes="Bold" FontSize="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  Text="{Binding Stats.Player}"/>
+
+                    <Button Grid.Row="1" Grid.Column="0" TextColor="{Binding Stats.FontColor}" Text="-" FontSize="45" FontAttributes="Bold" Background="Transparent" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"  Command="{Binding Stats.DecreaseLifeCommand}"/>
+                    <Label  Grid.Row="1" Grid.Column="1" TextColor="{Binding Stats.FontColor}"  FontAttributes="Bold" FontSize="50" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  Text="{Binding Stats.LifePoints}"/>
+                    <Button Grid.Row="1" Grid.Column="2" TextColor="{Binding Stats.FontColor}" Text="+" FontSize="45" FontAttributes="Bold" Background="Transparent" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"  Command="{Binding Stats.IncreaseLifeCommand}"/>
+
+                    <Button Grid.Column="0" Grid.Row="2" TextColor="{Binding Stats.FontColor}" Text="⏱" Margin="10,-10,0,0" FontSize="40" Background="Transparent" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Command="{Binding MainVM.SwitchPlayerCommand}" CommandParameter="{Binding Stats}"/>
+                    <Label Grid.Column="1" Grid.Row="2" TextColor="{Binding Stats.FontColor}" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  Text="{Binding Stats.Countdown}"/>
+                    <Button Grid.Column="2" Grid.Row="2" IsVisible="{Binding Stats.IsCurrent}" TextColor="{Binding Stats.FontColor}" Text="||" Margin="-10,-10,0,0" FontSize="40" Background="Transparent" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Command="{Binding MainVM.TimerOffCommand}"/>
+                </Grid>
+            </Frame>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

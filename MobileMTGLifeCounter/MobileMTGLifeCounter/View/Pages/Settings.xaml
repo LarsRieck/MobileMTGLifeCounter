@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MobileMTGLifeCounter.Control"
+             x:Class="MobileMTGLifeCounter.View.Pages.Settings"
+             NavigationPage.HasNavigationBar="false" Background="Black">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid ColumnDefinitions="*,1,*" x:Name="SettingsOuterGrid">            
+            <StackLayout Grid.Column="0">
+                <Button Text="←" HorizontalOptions="Start" Padding="0" FontAttributes="Bold" FontSize="40" TextColor="White" Background="Black" BorderColor="White" BorderWidth="3" Clicked="NavigateToMain"/>
+                <Grid ColumnDefinitions="*,*,50" HeightRequest="100">
+                    <Label FontSize="25" Text="Player" Grid.Column="0" FontAttributes="Bold" TextColor="White" />
+                    <Label FontSize="25" TextColor="White" Text="Color Set" FontAttributes="Bold"  Grid.Column="1"/>                  
+
+                </Grid>
+                <ListView ItemsSource="{Binding PlayerStatsList}" Background="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnDefinitions="*,*,50">
+                                    <Entry Text="{Binding Player}" Grid.Column="0" TextColor="White" />
+                                    <Picker TextColor="White" ItemDisplayBinding="{Binding Item1}"  ItemsSource="{Binding BindingContext.AllColors , Source={x:Reference SettingsOuterGrid}}" SelectedItem="{Binding BackgroundTuple}"   Grid.Column="1"/>
+                                    <Label VerticalOptions="CenterAndExpand" Grid.Column="2" FontAttributes="Bold" Text="Sample" TextColor="{Binding FontColor}" BackgroundColor="{Binding Background}"/>
+                                    
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </StackLayout>
+            <Rectangle Grid.Column="1" VerticalOptions="Fill" Background="White"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

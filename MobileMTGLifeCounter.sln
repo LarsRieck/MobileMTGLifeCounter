@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileMTGLifeCounter.Android", "MobileMTGLifeCounter\MobileMTGLifeCounter.Android\MobileMTGLifeCounter.Android.csproj", "{EAE0652E-96EA-42B0-B027-49AA0005DDA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileMTGLifeCounter", "MobileMTGLifeCounter\MobileMTGLifeCounter\MobileMTGLifeCounter.csproj", "{31FFB6F0-56EB-4182-9B62-5B7030BE406F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAE0652E-96EA-42B0-B027-49AA0005DDA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE0652E-96EA-42B0-B027-49AA0005DDA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE0652E-96EA-42B0-B027-49AA0005DDA7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EAE0652E-96EA-42B0-B027-49AA0005DDA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE0652E-96EA-42B0-B027-49AA0005DDA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE0652E-96EA-42B0-B027-49AA0005DDA7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{31FFB6F0-56EB-4182-9B62-5B7030BE406F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FFB6F0-56EB-4182-9B62-5B7030BE406F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FFB6F0-56EB-4182-9B62-5B7030BE406F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{31FFB6F0-56EB-4182-9B62-5B7030BE406F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FFB6F0-56EB-4182-9B62-5B7030BE406F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31FFB6F0-56EB-4182-9B62-5B7030BE406F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4158E4FC-FDCE-4F51-B073-305C6E23EDA0}
+	EndGlobalSection
+EndGlobal

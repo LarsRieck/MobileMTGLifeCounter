@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:uc="clr-namespace:MobileMTGLifeCounter.View.UserControls"
+             xmlns:vm="clr-namespace:MobileMTGLifeCounter.Control"
+             xmlns:rm="clr-namespace:MobileMTGLifeCounter.View.UserControls.RingMenu"
+             x:Class="MobileMTGLifeCounter.MainPage"
+             NavigationPage.HasNavigationBar="false">
+
+
+    <Grid BackgroundColor="Black">        
+        <Grid >
+          
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <uc:PlayerContent Grid.Row="0" Grid.Column="0" Stats="{Binding PlayerStatsList[0]}" Rotation="180" MainVM="{Binding }"/>
+            <uc:PlayerContent Grid.Row="0" Grid.Column="1" Stats="{Binding PlayerStatsList[1]}" Rotation="180" MainVM="{Binding }"/>
+            <uc:PlayerContent Grid.Row="1" Grid.Column="0" Stats="{Binding PlayerStatsList[2]}" MainVM="{Binding }"/>
+            <uc:PlayerContent Grid.Row="1" Grid.Column="1" Stats="{Binding PlayerStatsList[3]}" MainVM="{Binding }"/>
+        </Grid>
+        <rm:RingControl VerticalOptions="Center" HorizontalOptions="Center" MenuItems="{Binding MenuItems}" />
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="MobileMTGLifeCounter.View.UserControls.RingMenu.RingControl"
+             x:Name="RingControlName"
+             >
+    <ContentView.Resources>
+        <ResourceDictionary>            
+        </ResourceDictionary>
+    </ContentView.Resources>
+  <ContentView.Content>
+
+        <Grid x:Name="RingControlGrid" ColumnDefinitions="*, 75, *" RowDefinitions="*,75,*" VerticalOptions="Center" HorizontalOptions="Center" >
+
+            <skia:SKCanvasView Grid.Row="1" Grid.Column="1" x:Name="SKCanvas" Opacity="0"  EnableTouchEvents="True" Touch="SKCanvas_Touch" Background="Black" />
+
+
+            <Button x:Name="RingControlButton" Text="M" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" FontSize="40" CornerRadius="90" HeightRequest="75" WidthRequest="75" BorderColor="White" BorderWidth="3" TextColor="White" Background="Black" Clicked="MenuButton_Clicked"/>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>
